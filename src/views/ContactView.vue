@@ -4,6 +4,15 @@
     <div class="left">
       <h3>NEED HELP <span>WE ARE HERE</span></h3>
     </div>
+    <div class="text">
+      <h4>CALL US</h4>
+      <p>Contact us on +27 (0)21 700 4800</p>
+      <p>Monday- Friday, 8am- 5pm</p>
+    </div>
+    <div class="msg">
+      <h4>SEND US A MESSAGE</h4>
+      <p>Contact our support centre and we'll get back to you as soon as possible. During business hours, we will respond within 48 hours. Email us on support@sharenet.co.za</p>
+    </div>
     <div class="right">
       <img src="https://i.postimg.cc/QtXcYTsn/onur-binay-m-Vc-TLc-RAkn-M-unsplash.jpg">
     </div>
@@ -13,8 +22,8 @@
   <div class="content">
     <h3>TALK TO US ON <span>WhatsApp</span></h3>
     <div class="info">
-      <p>Chat with us on WhatsApp by scanning the QR code to add Sharenet as a contact.</p><br>
-      <p>How it works</p>
+      <p>Chat with us on <span>WhatsApp</span> by scanning the QR code to add Sharenet as a contact.</p><br>
+      <h6>How it works</h6>
       <ul>
         <li>Open WhatsApp to chat with us on your computer, or scan the QR code to add Sharenet as a contact</li>
         <li>Say "Hi" to us in the WhatsApp chat to start the conversation</li>
@@ -57,7 +66,7 @@
      </div>
  </div>
  <div class="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.495128478341!2d18.627532676605476!3d-33.876900019480125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc41e6218f7ab3%3A0xbdd802ca53b92d43!2sSharenet%20(Pty)%20Ltd!5e0!3m2!1sen!2sza!4v1683021933066!5m2!1sen!2sza"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.495128478417!2d18.627532675510697!3d-33.876900019478164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc41e6218f7ab3%3A0xbdd802ca53b92d43!2sSharenet%20(Pty)%20Ltd!5e0!3m2!1sen!2sza!4v1692958231649!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
  </div>
  <div class="subtitle">
   <h3>FIND US <span>HERE</span></h3>
@@ -84,14 +93,54 @@
  </div>
  <div class="email">
   <p>Email</p>
-  <p><a href="mailto: support@sharenet.co.za"> support@sharenet.co.za</a>
-  </p>
+  <p>support@sharenet.co.za</p>
  </div>
 </template>
 
 <style scoped>
 *{
   box-sizing: border-box;
+}
+.text h4{
+  display: flex;
+  margin-left: -50px;
+  margin-top: 2rem;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000000;
+}
+.text p{
+  display: flex;
+  margin-left: -50px;
+  margin-top: 0.9rem;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.msg h4{
+  display: flex;
+  margin-left: -50px;
+  margin-top: 2rem;
+  font-size: 22px;
+  font-weight: 600;
+  color: #000000;
+}
+.msg p{
+  display: flex;
+  margin-left: -55px;
+  margin-top: 0.9rem;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 395px;
+  color: black;
+}
+.left h3{
+  display: flex;
+  margin-left: -50px;
+  margin-top: 2rem;
+  font-size: 30px;
+  color: black;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 .map{
   display: flex;
@@ -104,26 +153,33 @@
 }
 .subtitle{
 display: block;
-margin-right: -600px;
+float: right;
+margin-right: 555px;
 margin-top: -400px;
 }
 .heading {
 display: flex;
-justify-content: right;
+float: right;
 gap: 40px;
-margin-right: 210px;
+margin-right: 400px;
+margin-top: -340px;
+color: black;
 }
 .tel{
   display: flex;
-  justify-content: right;
+  float: right;
   gap: 55px;
-  margin-right: 310px;
+  margin-right: 500px;
+  margin-top: -210px;
+  color: black;
 }
 .email{
   display: flex;
-  justify-content: right;
+  float: right;
   gap: 80px;
-  margin-right: 260px;
+  margin-right: 450px;
+  margin-top: -130px;
+  color: black;
 }
 .container{
   width: 100%;
@@ -132,17 +188,18 @@ margin-right: 210px;
   padding-left: var(--bs-gutter-x,.75rem);
   margin-right: auto;
   margin-left: auto;
-
+  margin-top: 5rem;
 }
 .row span{
   color: #71b5fc;
 }
 .right img{
-  height: 400px;
+  height: 425px;
   width: 650px;
   margin-left: 740px;
   position: relative;
-  filter: blur(2px);
+  filter: blur(1.7px);
+  margin-top: -370px;
 }
 .background{
   background: rgb(243, 244, 246);
@@ -150,9 +207,33 @@ margin-right: 210px;
   justify-content: center;
   align-items: center;
   padding-bottom: 70px;
+  margin-top: -10px;
 }
 .content span{
   color: rgb(36, 220, 36);
+  font-size: 30px;
+  font-weight: bold;
+}
+.content h3{
+  color: black;
+  font-size: 28px;
+  font-weight: bold;
+  margin-right: 350px;
+}
+.info span{
+  color: black;
+  font-size: 14px;
+}
+.info p{
+  margin-right: 130px;
+  color: black;
+}
+.info h6{
+  margin-right: 620px;
+  color: black;
+}
+.info li{
+  color: black;
 
 }
 .con{
@@ -161,6 +242,7 @@ margin-right: 210px;
     height: 500px;
     margin-right: 50px;
     border-radius: 5px;
+    margin-bottom: 30px;
 }
 .form{
     padding: 3.3rem 2.2rem;
@@ -240,6 +322,7 @@ textarea.input{
 }
 .content {
   margin-right: 90px;
+  margin-top: 110px;
 }
 
 </style>

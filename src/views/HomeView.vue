@@ -1,30 +1,25 @@
 <template>
   <div class="background">
-    <img src="https://i.postimg.cc/HsRxZVD9/background-1.png">
+    <img src="https://i.postimg.cc/HsRxZVD9/background-1.png" style="width: 100vw; height: 100vh; background-size: cover;">
   </div>
   <div class="container">
-    <table class="crypto-coin">
+    <table class="spot-prices">
       <thead>
         <tr>
-          <th @onclick="sortTable('Rank')">Rank</th>
-          <th @onclick="sortTable('CoinName')">CoinName</th>
-          <th @onclick="sortTable('CoinSymbol')">CoinSymbol</th>
+          <th @onclick="sortTable('FullName')">FullName</th>
           <th @onclick="sortTable('Price')">Price</th>
-          <th @onclick="sortTable('price_change_percentage_1h_in_currency')">1h</th>
-          <th @onclick="sortTable('Market Cap')">Market Cap</th>
+          <th @onclick="sortTable('Move')">Move</th>
+          <th @onclick="sortTable('Percentage Move')">PercentageMove</th>
+          <th @onclick="sortTable('Time')">Time</th>
         </tr>
       </thead>
       <tbody id="body">
-        <tr v-for="crypto in sortedCrypto" :key="crypto.id">
-            <td class="rank">{{ crypto.rank }}</td>
-            <td>
-              <img :src="crypto.image" :alt="crypto.name" class="coin-icon" />
-              {{ crypto.name }}
-            </td>
-            <td>{{ crypto.symbol }}</td>
-            <td>{{ 'ZAR ' + crypto.current_price.toFixed(2) }}</td>
-            <td>{{ crypto.price_change_percentage_1h_in_currency }}</td>
-            <td>{{ 'ZAR ' + crypto.market_cap.toLocaleString() }}</td>
+        <tr v-for="spot in sortedSpotData" :key="spot.id">
+            <td>{{ spot.FullName }}</td>
+            <td>{{ 'ZAR ' + Price.toFixed(2) }}</td>
+            <td>{{ spot.Move }}</td>
+            <td>{{ 'ZAR ' + spot.PercentageMove.toLocaleString() }}</td>
+            <td>{{ spot.Time }}</td>
           </tr>
       </tbody>
     </table>
@@ -37,14 +32,14 @@ import { computed } from 'vue';
 export default {
   data() {
       return {
-        cryptoData: [],
+        spotData: [],
         sortKey: '',
         sortTable: 1,
       };
     },
     computed: {
-      sortedCrypto() {
-        const sorted = this.cryptoData.slice().sort((a, b) => {
+      sortedSpotData() {
+        const sorted = this.spotData.slice().sort((a, b) => {
           const keyA = a[this.sortKey];
           const keyB = b[this.sortKey];
           return this.sortTable * (keyA > keyB ? 1 : -1);
@@ -56,29 +51,16 @@ export default {
       async fetchData() {
         try {
           const response = await axios.get(
-            'https://api.coingecko.com/api/v3/coins/markets',
-            {
-              params: {
-                vs_currency: 'zar',
-                ids: 'bitcoin,ethereum,ripple,cardano,polkadot,binancecoin,dogecoin,litecoin,uniswap,avalanche-2',
-                order: 'market_cap_desc',
-                per_page: 10,
-                page: 1,
-                sparkline: false,
-                localization: false,
-              },
-            }
+            'https://api.sharenet.co.za/api/v1/px2/spots',
           );
-          this.cryptoData = response.data;
-          const coinIds = this.cryptoData.map((crypto) => crypto.id).join(',');
+          this.spotData = response.data;
+          const spotIds = this.spotData.map((spot) => spot.id).join(',');
           const metadataResponse = await axios.get(
-            `https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=${coinIds}`
+            `https://api.sharenet.co.za/api/v1/px2/spots=${spotIds}`
           );
-          const metadataMap = new Map(metadataResponse.data.map((crypto) => [crypto.id, crypto]));
-          this.cryptoData.forEach((crypto, index) => {
-            if (metadataMap.has(crypto.id)) {
-              crypto.image = metadataMap.get(crypto.id).image;
-              crypto.rank = index + 1;
+          const metadataMap = new Map(metadataResponse.data.map((spot) => [spot.id, spot]));
+          this.spotData.forEach((spot, index) => {
+            if (metadataMap.has(spot.id)) {
             }
           });
         } catch (error) {
@@ -108,27 +90,15 @@ export default {
   left: 30%;
   transform: translate(-50%, -50%);
 }
-.crypto-coin{
+.spot-prices{
   max-width: 100px;
   border-collapse: collapse;
   border: 1px solid #000000;
 }
-.crypto-coin th{
+.spot-prices th{
   font-size: 18px;
   white-space: nowrap;
   padding: 18px 12px;
 } 
-  .coin-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    inline-size: 20px;
-  }
-  .rank {
-    font-weight: bold;
-  }
-.background img{
-  /* width: 100vw;
-  height: 100vh; */
-}
+
 </style>
