@@ -1,13 +1,13 @@
 <template>
   <nav class="navbar bg-body-tertiary fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Sharenet</a>
+    <a class="navbar-brand" href="#">SHARENET</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SHARENET</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
@@ -25,7 +25,15 @@
 </nav>
 </template>
 
-<style>
-
+<style scoped>
+.navbar-brand{
+  color: #39b3cc !important;
+  font-size: 25px;
+  font-weight: 300;
+  font-family: 'Jost';
+}
+.navbar{
+ height: 70px;
+}
 </style>
 

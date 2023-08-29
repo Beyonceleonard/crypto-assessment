@@ -25,12 +25,14 @@
       <p>Chat with us on <span>WhatsApp</span> by scanning the QR code to add Sharenet as a contact.</p><br>
       <h6>How it works</h6>
       <ul>
-        <li>Open WhatsApp to chat with us on your computer, or scan the QR code to add Sharenet as a contact</li>
+        <li><span>Open WhatsApp</span> to chat with us on your computer, or scan the
+        <br>
+           QR code to add Sharenet as a contact</li>
         <li>Say "Hi" to us in the WhatsApp chat to start the conversation</li>
         <li>Follow the prompts to complete your request</li>
       </ul>
       <div class="image">
-        <img src="https://i.postimg.cc/05SyB9nY/Sharenet-Whats-App-1eb8ee79.png">
+        <img src="https://i.postimg.cc/05SyB9nY/Sharenet-Whats-App-1eb8ee79.png" style="width: 180px; display: flex; margin-left: 150px;">
       </div>
     </div>
   </div>
@@ -66,7 +68,7 @@
      </div>
  </div>
  <div class="map">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.495128478417!2d18.627532675510697!3d-33.876900019478164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc41e6218f7ab3%3A0xbdd802ca53b92d43!2sSharenet%20(Pty)%20Ltd!5e0!3m2!1sen!2sza!4v1692958231649!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.495128478417!2d18.627532675510697!3d-33.876900019478164!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc41e6218f7ab3%3A0xbdd802ca53b92d43!2sSharenet%20(Pty)%20Ltd!5e0!3m2!1sen!2sza!4v1692958231649!5m2!1sen!2sza" width="550" height="450" style="border:0; margin-left: 60px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
  </div>
  <div class="subtitle">
   <h3>FIND US <span>HERE</span></h3>
@@ -95,6 +97,7 @@
   <p>Email</p>
   <p>support@sharenet.co.za</p>
  </div>
+ <router-link class="link" to="/">Back</router-link>
 </template>
 
 <style scoped>
@@ -127,11 +130,12 @@
 }
 .msg p{
   display: flex;
-  margin-left: -55px;
+  margin-left: -50px;
   margin-top: 0.9rem;
   font-size: 14px;
   font-family: Arial, Helvetica, sans-serif;
-  width: 395px;
+  width: 410px;
+  text-align: left;
   color: black;
 }
 .left h3{
@@ -145,8 +149,9 @@
 .map{
   display: flex;
   margin-top: 5rem;
-  margin-left: 20px;
+  margin-left: 70px;
   height: 400px;
+  margin-bottom: 80px;
 }
 .subtitle h3 span{
   color: #71b5fc;
@@ -154,14 +159,14 @@
 .subtitle{
 display: block;
 float: right;
-margin-right: 555px;
+margin-right: 450px;
 margin-top: -400px;
 }
 .heading {
 display: flex;
 float: right;
 gap: 40px;
-margin-right: 400px;
+margin-right: 300px;
 margin-top: -340px;
 color: black;
 }
@@ -169,7 +174,7 @@ color: black;
   display: flex;
   float: right;
   gap: 55px;
-  margin-right: 500px;
+  margin-right: 400px;
   margin-top: -210px;
   color: black;
 }
@@ -177,7 +182,7 @@ color: black;
   display: flex;
   float: right;
   gap: 80px;
-  margin-right: 450px;
+  margin-right: 350px;
   margin-top: -130px;
   color: black;
 }
@@ -234,7 +239,7 @@ color: black;
 }
 .info li{
   color: black;
-
+  margin-right: 250px;
 }
 .con{
     position: relative;
@@ -242,7 +247,7 @@ color: black;
     height: 500px;
     margin-right: 50px;
     border-radius: 5px;
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 .form{
     padding: 3.3rem 2.2rem;
@@ -312,17 +317,20 @@ textarea.input{
     color: #000000f2;
 }
 .contact-form h3 span{
-  color: black;
+  color: #67eb50f2;
 }
 .contact-form h3{
-  color: #686363;
+  color: #000000;
   font-size: 25px;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
 }
 .content {
   margin-right: 90px;
-  margin-top: 110px;
+  margin-top: 50px;
+}
+.link{
+
 }
 
 </style>
